@@ -1,0 +1,808 @@
+/* ============================================================================== */
+/* MAIN - CSS (Main.css) */
+/* Here we have the main CSS file that changes the colors, sizes, and positions of all elements on our website pages. */
+/* This file is linked inside the <head> of Introduction.php, Main.php, Buy.php, Sell.php, Swap.php, and Donate.php. */
+/* ============================================================================== */
+
+/* -------------------------------------------------------------- */
+/* KEYWORDS EXPLANATION: */
+/* -------------------------------------------------------------- */
+
+/*What is a selector for? It is the name we write before the { } brackets to tell CSS which HTML element we want to change.*/
+
+/*If it starts with a dot (like .navbar), it selects an HTML class (class="navbar").*/
+/*If it starts with a hashtag (like #lang-btn), it selects an HTML id (id="lang-btn").*/
+/*If it has no symbol (like body or header), it selects that HTML tag directly (<body> or <header>).*/
+
+
+/* ------------------------------------------------------------------------------ */
+/* 1. GLOBAL VARIABLES & BASE RESET */
+/* ------------------------------------------------------------------------------ */
+
+/* What is :root for? :root is where we create color variables (starting with --) for the whole website. */
+/* Instead of writing color codes like #4a2f18 many times, we save our autumn palette here with a name and use var() later. */
+:root {
+  --autumn-umber: #4a2f18;      /*Here we save the main dark brown color of Crossed Pages*/
+  --autumn-umber-dark: #2e1c0e; /*Here we save a deeper dark brown used when the mouse passes over the swap card*/
+  --autumn-rust: #c1502e;       /*Here we save the warm orange-rust color used for buttons and cards*/
+  --autumn-gold: #d9a441;       /*Here we save the golden yellow color used for borders and menu highlights*/
+  --autumn-cream: #f6ead2;      /*Here we save the soft cream color used for book cards and light text*/
+  --autumn-ink: #2b1a0e;        /*Here we save the dark brown color used for main text*/
+  --autumn-bg: #dab989;         /*Here we save the warm tan color for backgrounds*/
+}
+
+/*Here we change the style of the <header> tag and the .linea container at the top of our pages.*/
+header,
+.linea {
+  background-color: var(--autumn-umber); /*Paints the header background in dark brown*/
+}
+
+/*Here we change the style of the <main> container.*/
+main {
+  flex: 1; /*Makes <main> expand to fill available vertical space so the footer stays at the bottom*/
+}
+
+/*Here we change the style of all elements on the page using the * symbol (which means "everything").*/
+/*What is box-sizing: border-box for? It makes sure that when we add padding or borders to a box, the box does not grow bigger than its width and break the page.*/
+* {
+  margin: 0; /*Removes default outer space*/
+  padding: 0; /*Removes default inner space*/
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif; /*Sets a clean default font for all elements*/
+}
+
+/*Here we change the height of <html> and <body> so they cover the full screen.*/
+html, body {
+  height: 100%;
+}
+
+/*Here we change the style of the <body> tag (the main screen of our pages).*/
+/*What is display: flex for? Flexbox is a tool that organizes elements inside a container in a row or column.*/
+body {
+  font-family: Verdana, sans-serif; /*Sets Verdana as the main font of the body*/
+  display: flex; /*Activates Flexbox on the page body*/
+  flex-direction: column; /*Stacks the header, content, and footer vertically from top to bottom*/
+  min-height: 100vh; /*Makes sure the page is at least as tall as the full browser screen (100% viewport height)*/
+}
+
+/*Here we add a 10px margin around all <h2> headings and <p> paragraphs.*/
+h2, p {
+  margin: 10px;
+}
+
+/* ------------------------------------------------------------------------------ */
+/* 2. HEADER & NAVIGATION BAR */
+/* [REQUIREMENT: "La página deberá contener y hacer uso de: flexbox, grid y un navigation bar"] */
+/* ------------------------------------------------------------------------------ */
+
+/*Here we change the style of the .navbar container (the top navigation bar on Introduction.php, Main.php, Buy.php, Sell.php, Swap.php, and Donate.php).*/
+.navbar {
+  display: flex; /*Puts the logo/user area and the page links in the same horizontal row*/
+  justify-content: space-between; /*Pushes the logo area to the left and the menu links to the right*/
+  align-items: center; /*Centers all items vertically in the middle of the bar*/
+  background-color: var(--autumn-umber); /*Dark brown background*/
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /*Adds a soft shadow under the navbar*/
+  padding: 16px 40px; /*Adds 16px of inner space on top/bottom and 40px on left/right*/
+  position: sticky; /*Keeps the navigation bar fixed at the top when scrolling down*/
+  top: 0;
+  z-index: 100; /*Keeps the navbar on top of other elements*/
+}
+
+/*Here we change the style of the .logo container (holds the logo image and the Access / Welcome + Logout controls).*/
+.logo {
+  display: flex; /*Puts the logo image and the session buttons side by side*/
+  align-items: center; /*Centers them vertically*/
+}
+
+/*Here we change the style of the <a> links inside .logo.*/
+.logo a {
+  text-decoration: none; /*Removes underline*/
+  color: var(--autumn-cream); /*Cream text color*/
+  font-size: 17px;
+  font-weight: 700; /*Bold text*/
+  letter-spacing: 0.5px;
+}
+
+/*Here we change the style of the .logo-img image (the Crossed Pages logo inside the header on all pages).*/
+.logo-img {
+  height: 44px; /*Sets the logo height to 44 pixels*/
+  width: auto; /*Adjusts width automatically*/
+  display: block; /*Removes extra space below the image*/
+}
+
+/*Here we change the style of the #access-link button ("Access" button shown when the user is not logged in) and the .buy-btn button (inside each book card).*/
+#access-link,
+.buy-btn {
+  text-decoration: none; /*Removes underline*/
+  color: var(--autumn-cream); /*Cream text color*/
+  background-color: var(--autumn-rust); /*Warm orange-rust button background*/
+  padding: 8px 22px; /*Inner space inside the pill button*/
+  border-radius: 20px; /*Rounds the corners so the button looks like a pill*/
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-block;
+  line-height: 0.25;
+  transition: background-color 0.3s ease; /*Smooth background color animation when hovering*/
+}
+
+/*Here we change the style of #access-link and .buy-btn when the user puts the mouse over them (:hover).*/
+#access-link:hover,
+.buy-btn:hover {
+  background-color: #a13f22; /*Changes to a darker rust color on hover*/
+  color: var(--autumn-cream);
+}
+
+/*Here we disable the ::after underline on #access-link (which sits inside .menu on Introduction.php) and .buy-btn so pill buttons never get an underline.*/
+#access-link::after,
+.buy-btn::after {
+  content: none;
+}
+
+/*Here we change the style of the .menu container that holds the navigation links.*/
+.menu {
+  display: flex; /*Puts all navigation links side by side in a row*/
+  align-items: center; /*Centers the links vertically*/
+  gap: 35px; /*Leaves 35px of space between each link*/
+}
+
+/*Here we change the style of each <a> link inside .menu (including #color on Introduction.php).*/
+.menu a {
+  text-decoration: none; /*Removes the default underline*/
+  color: var(--autumn-cream); /*Paints the menu links in cream color*/
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  padding-bottom: 6px; /*Leaves space at the bottom for the animated golden underline*/
+  position: relative; /*Allows us to position the ::after underline right below each link*/
+  transition: color 0.3s; /*Smooth text color change in 0.3 seconds*/
+}
+
+/*Here we create the animated golden underline under each .menu link using ::after.*/
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px; /*2px thick golden line*/
+  background-color: var(--autumn-gold);
+  transform: scaleX(0); /*Hides the line by default (width 0)*/
+  transform-origin: left; /*Makes the line grow from left to right*/
+  transition: transform 0.25s ease; /*Smoothly animates the line in 0.25 seconds*/
+}
+
+/*Here we show the golden underline (scaleX(1)) when hovering over a link (:hover) or when we are on that active page (.active-link).*/
+.menu a:hover::after,
+.menu a.active-link::after {
+  transform: scaleX(1);
+}
+
+/*Here we paint the text of the current page link (.active-link), hovered .menu links, and hovered .logo links in golden yellow.*/
+.menu a.active-link,
+.menu a:hover,
+.logo a:hover {
+  color: var(--autumn-gold);
+}
+
+/* ------------------------------------------------------------------------------ */
+/* 3. INTRODUCTION PAGE SECTIONS (TITLE, HOW IT WORKS, PLANS GRID & ABOUT US) */
+/* [REQUIREMENT: "La página deberá contener y hacer uso de: flexbox, grid y un navigation bar"] */
+/* ------------------------------------------------------------------------------ */
+
+/*Here we change the style of the .titulo container that holds the main "Crossed pages" heading on Introduction.php.*/
+.titulo {
+  text-align: center; /*Centers the main title horizontally*/
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/*Here we change the style of the <h1> title inside the .us ("About us") section on Introduction.php.*/
+.us h1 {
+  text-align: center; /*Centers the title*/
+  margin-top: 50px;
+  margin-bottom: 20px;
+  color: var(--autumn-ink);
+}
+
+/*Here we change the shared style of the .how_works (Introduction) and .us-content (About us) containers on Introduction.php so the photo and paragraph sit side by side.*/
+.how_works,
+.us-content {
+  display: flex; /*Uses Flexbox to put the image and the text side by side in a row*/
+  align-items: center; /*Centers the image and text vertically*/
+  justify-content: center; /*Centers them horizontally on the page*/
+  gap: 40px; /*Leaves 40px of space between the photo and the paragraph*/
+  max-width: 1000px; /*Limits the section width to 1000px*/
+  margin: 0 auto; /*What is margin: 0 auto for? "auto" on left and right centers the container in the middle of the screen*/
+  padding: 0 20px;
+}
+
+/*Here we add 30px of top space specifically to the .how_works container.*/
+.how_works {
+  margin-top: 30px;
+}
+
+/*Here we change the style of the <img> photos inside both .how_works and .us-content.*/
+.how_works img,
+.us-content img {
+  width: 300px; /*Sets the photo width to 300px*/
+  height: auto; /*Keeps the natural proportions of the photo*/
+  flex-shrink: 0; /*Stops Flexbox from squishing the image*/
+  display: block;
+}
+
+/*Here we change the style of the <p> description paragraphs inside both .how_works and .us-content.*/
+.how_works p,
+.us-content p {
+  font-size: 18px;
+  color: var(--autumn-ink); /*Dark brown text*/
+  text-align: left;
+  max-width: 420px; /*Limits the paragraph width so the lines are comfortable to read*/
+  line-height: 1.5; /*Adds breathing room between lines of text*/
+  margin: 0;
+}
+
+/*Here we change the style of the .container Grid box on Introduction.php that holds the 4 plan cards (Donate, Sell, Buy, Trade).*/
+/*What is display: grid for? CSS Grid is a layout system that creates a table of columns and rows for cards.*/
+.container {
+  display: grid; /*[GRID] Activates CSS Grid layout on the plans container*/
+  grid-template-columns: repeat(2, 1fr); /*What is repeat(2, 1fr) for? It divides the row into 2 equal columns (1fr means 1 equal fraction of the space)*/
+  gap: 15px; /*Leaves 15px of space between every card*/
+  padding: 20px;
+  width: 90%;
+  max-width: 600px; /*Limits the grid width to 600px*/
+  margin: 0 auto; /*Centers the grid in the middle of the page*/
+}
+
+/*Here we change the style of the .main-title heading (used on Introduction.php, Sell.php, Swap.php, and Donate.php).*/
+.main-title {
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 40px 0 20px 0;
+  color: var(--autumn-ink);
+  text-align: center; /*Centers the heading*/
+}
+
+/*Here we change the style of each .grid-item card (Donate, Sell, Buy, and Trade on Introduction.php).*/
+.grid-item {
+  border: 1px solid #ccc;
+  border-radius: 12px; /*Rounds the corners of each card*/
+  padding: 15px; /*Inner space inside the card*/
+  min-height: 200px; /*Makes sure every card is at least 200px tall*/
+  display: flex; /*Uses Flexbox inside the card*/
+  flex-direction: column; /*Stacks the title and description vertically one below the other*/
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  text-decoration: none; /*Removes link underline from the card*/
+  color: inherit;
+  cursor: pointer; /*Shows a hand cursor when pointing at a card*/
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /*Smooth zoom and shadow animation when hovering*/
+}
+
+/*Here we change the style of the .item-text text inside each plan card.*/
+.item-text {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--autumn-ink);
+  margin: 0;
+}
+
+/*Here we change the style of the .item-description paragraph inside each plan card.*/
+.item-description {
+  font-size: 12px;
+  color: var(--autumn-ink);
+  margin-top: 70px; /*Pushes the description text down toward the bottom of the card*/
+}
+
+/*Here we change the background and border color of each individual plan card so each one has its own autumn color.*/
+.item-donate { background-color: #ecdcc0; border-color: #d8c19c; } /*Light cream card for Donate*/
+.item-sell   { background-color: #8a5a35; border-color: #6e4527; } /*Warm brown card for Sell*/
+.item-buy    { background-color: #74804a; border-color: #5c6539; } /*Olive green card for Buy*/
+.item-trade  { background-color: #b8542f; border-color: #94421f; } /*Terracotta rust card for Trade*/
+
+/*Because the Sell, Buy, and Trade cards have dark backgrounds, here we change their text color (.item-text) to light cream so it is easy to read.*/
+.item-sell .item-text,
+.item-buy .item-text,
+.item-trade .item-text {
+  color: var(--autumn-cream);
+}
+
+/*Here we change the style of .grid-item when the user puts the mouse over a card (:hover).*/
+.grid-item:hover {
+  transform: scale(1.05); /*Makes the card grow 5% bigger when hovering*/
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2); /*Adds a shadow underneath the card*/
+  z-index: 10; /*Brings the hovered card to the front*/
+}
+
+/* ------------------------------------------------------------------------------ */
+/* 4. SLIDESHOW / IMAGE CAROUSEL (MAIN.PHP) */
+/* ------------------------------------------------------------------------------ */
+
+/*Here we change the style of each .mySlides slide container inside the carousel on Main.php.*/
+/*This connects with the showSlides() JavaScript function in Main.php: all slides start hidden (display: none), and JavaScript shows one slide at a time every 4 seconds.*/
+.mySlides {
+  display: none; /*Hides all slides by default until JavaScript activates one*/
+  width: 100%;
+  height: 100%;
+}
+
+/*Here we change the style of the .slideshow-container box that holds the banner images on Main.php.*/
+.slideshow-container {
+  width: 100%; /*Takes 100% of the screen width*/
+  position: relative;
+  overflow: hidden; /*Hides anything that sticks out of the container*/
+  background-color: #000;
+  border-bottom: 3px solid var(--autumn-gold); /*Golden line at the bottom of the carousel*/
+}
+
+/*Here we change the background of each slide (.slide-empireo, .slide-harry, and .slide-hunger) using linear-gradient() so the empty sides match the colors of each book banner.*/
+/*What is linear-gradient(to bottom, ...) for? It blends multiple colors from top (0%) to bottom (100%) behind the image.*/
+.slide-empireo {
+  background: linear-gradient(to bottom, #171108 0%, #3d2817 25%, #b08657 50%, #b78d5c 75%, #b07242 100%);
+}
+
+/*Changes the background gradient for the Harry Potter slide on Main.php*/
+.slide-harry {
+  background: linear-gradient(to bottom, #1a2851 0%, #2f649a 25%, #245083 50%, #0d1532 75%, #090c1d 100%);
+}
+
+/*Changes the background gradient for the Hunger Games slide on Main.php*/
+.slide-hunger {
+  background: linear-gradient(to bottom, #2d2720 0%, #26211c 25%, #352c22 50%, #443a2d 75%, #2c241d 100%);
+}
+
+/*Here we change the style of the <img> inside .mySlides so the entire banner image is visible without cropping.*/
+.mySlides img {
+  width: 100%;
+  height: min(45vw, 400px); /*Scales height with screen width (45vw) but never taller than 400px*/
+  object-fit: contain; /*Shows the whole image inside the box without cutting or stretching it*/
+  object-position: center; /*Centers the image*/
+  display: block;
+}
+
+/*Here we change the style of the .dot circles below the carousel on Main.php.*/
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #cbb08a; /*Light tan circle color*/
+  border-radius: 50%; /*Makes each indicator a circle*/
+  display: inline-block;
+  transition: background-color 0.6s ease; /*Smooth color transition when switching slides*/
+}
+
+/*Here we change the color of the .dot when JavaScript adds the .active class to show which slide is currently on screen.*/
+.active {
+  background-color: var(--autumn-rust); /*Highlights the active dot in orange-rust*/
+}
+
+/*Here we change the style of the .fade class to apply a 1.5-second fade-in animation when switching slides.*/
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+/*Here we hide the mobile menu checkbox (.nav-toggle) and hamburger icon (.hamburger) on computer screens.*/
+.nav-toggle {
+  display: none; /*Hides the checkbox square*/
+}
+
+.hamburger {
+  display: none; /*Hides the 3-lines icon on desktop (it turns on for phones inside @media below)*/
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/*What is @keyframes for? It defines the steps of an animation—here "fade" starts slightly transparent (opacity: 0.4) and transitions to fully visible (opacity: 1).*/
+@keyframes fade {
+  from { opacity: 0.4; } 
+  to { opacity: 1; }
+}
+
+/* ------------------------------------------------------------------------------ */
+/* 5. RESPONSIVE DESIGN (TABLET & MOBILE MEDIA QUERIES) */
+/* ------------------------------------------------------------------------------ */
+
+/*What is @media for? Media Queries let us change the CSS styles automatically when the screen is smaller (like on a tablet or a mobile phone) so the website doesn't look squished.*/
+
+/*Here we change the styles when the screen width is 1024px or smaller (Tablets).*/
+@media (max-width: 1024px) {
+  /*Makes the logo text slightly smaller on tablets*/
+  .logo a {
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  /*Stacks the logo row and menu links vertically in a column on tablets*/
+  .navbar {
+    flex-direction: column; 
+    align-items: center; 
+    gap: 1rem;
+  }
+}
+
+/*Here we change the styles when the screen width is 768px or smaller (Mobile Phones).*/
+@media (max-width: 768px) {
+  /*Aligns the hamburger icon to the right side of the header on phones*/
+  header {
+    text-align: right; 
+  }
+
+  /*Hides the .navbar menu by default on mobile phones*/
+  .navbar {
+    display: none; 
+    width: 100%;
+    margin-top: 1rem; 
+  }
+
+  /*Adjusts the logo link font size on mobile phones*/
+  .logo a {
+    font-size: 8px;
+    font-weight: 500;
+  }
+
+  /*Makes the 3-lines .hamburger icon visible on mobile phones*/
+  .hamburger {
+    display: inline-block;
+  }
+
+  /*How does the mobile menu open without JavaScript?*/
+  /*When the user taps the hamburger label, the hidden checkbox (.nav-toggle) gets checked (:checked), and the ~ symbol changes .navbar to display: flex so the menu appears.*/
+  .nav-toggle:checked ~ .navbar {
+    display: flex; 
+  }
+
+  /*Here we change .how_works and .us-content on Introduction.php so the photo and text stack vertically in a column on mobile phones.*/
+  .how_works,
+  .us-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /*Here we center the text paragraphs inside .how_works and .us-content on mobile phones.*/
+  .how_works p,
+  .us-content p {
+    text-align: center;
+  }
+
+  /*Here we change the .container Grid on Introduction.php from 2 columns down to 1 single column (1fr) so the cards stack one below the other on phones.*/
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ------------------------------------------------------------------------------ */
+/* 6. FOOTER, LANGUAGE BUTTON & USER SESSION CONTROLS */
+/* ------------------------------------------------------------------------------ */
+
+/*Here we change the style of the .footer container at the bottom of all our pages.*/
+.footer {
+  display: flex;
+  flex-direction: column; /*Stacks the credit text, emails, and copyright vertically*/
+  align-items: center; /*Centers all items horizontally*/
+  gap: 10px; /*Leaves 10px of space between each row*/
+  background-color: var(--autumn-umber); /*Dark brown background*/
+  padding: 16px 40px;
+  margin-top: auto; /*Pushes the footer to the very bottom of the screen*/
+  text-align: center;
+}
+
+/*Here we change the style of the <p> paragraphs inside .footer.*/
+.footer p {
+  color: var(--autumn-cream); /*Cream text color*/
+  text-decoration: none;
+  padding: 8px 0;
+  display: inline-block;
+  line-height: 0.25;
+}
+
+/*Here we change the style of the .credit text and email links inside .footer.*/
+.footer .credit,
+.footer-emails a {
+  color: var(--autumn-cream);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/*Here we change the style of the .footer-emails container so both emails sit side by side.*/
+.footer-emails {
+  display: flex; /*Puts the two email addresses in a horizontal row*/
+  justify-content: center;
+  gap: 40px; /*Leaves 40px of space between the two emails*/
+}
+
+/*Here we change the style of the #lang-btn button (the floating Español / English button in the bottom-right corner that runs toggleLanguage() from translations.js).*/
+#lang-btn {
+  position: fixed; /*Keeps the button fixed in the bottom-right corner even when scrolling*/
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+
+  width: 65px;
+  height: 65px;
+  border-radius: 50%; /*Rounds the button into a circle*/
+  border: 2px solid var(--autumn-cream);
+  background-color: var(--autumn-rust);
+  color: var(--autumn-cream);
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*Here we change the style of #lang-btn when the mouse is over it (:hover).*/
+#lang-btn:hover {
+  background-color: var(--autumn-umber); /*Changes background to dark brown*/
+  transform: scale(1.08); /*Makes the circle grow 8% bigger on hover*/
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+/*Here we make the logo (#logo-link) grow slightly bigger when the user hovers over it.*/
+#logo-link:hover {
+  transform: scale(1.05); 
+  z-index: 10;
+}
+
+/*Here we change the style of the .welcome-msg text (shows "Welcome username" in the navbar when $_SESSION['name'] is active).*/
+.welcome-msg {
+  color: #f5e6d0; /*Soft cream text color*/
+  margin-left: 15px; /*Leaves 15px of space to the right of the logo*/
+  font-size: 14px;
+}
+
+/*Here we change the style of the .logout-btn button in the navbar (links to Logout.php).*/
+.logout-btn {
+  background-color: #c0502d; /*Orange-rust pill background*/
+  color: white; /*White text*/
+  padding: 3px 14px;
+  border-radius: 20px; /*Pill-shaped corners*/
+  text-decoration: none;
+  font-size: 13px;
+  margin-left: 10px;
+}
+
+/* ------------------------------------------------------------------------------ */
+/* 7. INNER PAGES TEXT SECTIONS (DONATE, SWAP, SELL) */
+/* ------------------------------------------------------------------------------ */
+
+/*Here we change the shared style of the .donate-info, .swap-info, and .sell-info containers (used on Donate.php, Swap.php, and Sell.php).*/
+.donate-info,
+.swap-info,
+.sell-info {
+  max-width: 800px; /*Limits width to 800px*/
+  margin: 0 auto; /*Centers the box horizontally*/
+  padding: 20px;
+  text-align: center; /*Centers the text*/
+}
+
+/*Here we change the style of the <h1> title inside .donate-info, .swap-info, and .sell-info.*/
+.donate-info h1,
+.swap-info h1,
+.sell-info h1 {
+  font-size: 32px;
+} 
+
+/*Here we change the style of the <p> paragraphs inside .donate-info, .swap-info, and .sell-info.*/
+.donate-info p,
+.swap-info p,
+.sell-info p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* ------------------------------------------------------------------------------ */
+/* 8. BOOK CARDS GRID & CALL-TO-ACTION BANNERS (MAIN.PHP & BUY.PHP) */
+/* [REQUIREMENT: "La página deberá contener y hacer uso de: flexbox, grid y un navigation bar"] */
+/* Here is where CSS GRID (display: grid) is programmed to organize the book cards into 3 columns. */
+/* ------------------------------------------------------------------------------ */
+
+/*Here we change the style of the .book container (used on Main.php and Buy.php to organize the book cards into columns and rows).*/
+/*What is display: grid for? CSS Grid is a layout system that creates a table of columns and rows for cards.*/
+.book {
+  display: grid; /*[GRID] Activates CSS Grid layout on the book container*/
+  grid-template-columns: repeat(3, minmax(150px, 1fr)); /*Creates 3 equal columns (each at least 150px wide)*/
+  grid-template-rows: minmax(220px, auto); /*Sets each row to be at least 220px tall*/
+  gap: 40px; /*Leaves 40px of space between every book card*/
+  width: min(100%, 700px); /*Takes up to 700px of width*/
+  margin: 20px auto 40px; /*Centers the grid horizontally on the page*/
+  padding: 0 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Here we change the style of each .book-item card (each cream box showing a book title, price, and Buy button).*/
+.book-item {
+  background-color: var(--autumn-cream); /*Soft cream card background*/
+  padding: 24px;
+  border-radius: 8px; /*Rounded corners*/
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /*Soft shadow under each book card*/
+  display: flex; /*Uses Flexbox to stack the title, price, and button inside the card*/
+  flex-direction: column; /*Stacks items vertically*/
+  align-items: center; /*Centers items horizontally*/
+  justify-content: center; /*Centers items vertically*/
+  min-height: 250px;
+}
+
+/*Here we change the style of the .sell-section container on Main.php.*/
+.sell-section {
+  display: flex;
+  justify-content: center; /*Centers the sell box horizontally*/
+  padding: 0 20px;
+  margin-top: 20px;
+}
+
+/*Here we change the style of the .sell-box container ("Sell your books here" box with a dashed border on Main.php).*/
+.sell-box {
+  width: 100%;
+  max-width: 680px;
+  min-height: 220px;
+  border: 3px dashed #4a2c17; /*Dashed dark brown border*/
+  border-radius: 12px;
+  background-color: rgba(247, 232, 211, 0.4); /*Semi-transparent cream background (40% opacity)*/
+  display: flex;
+  flex-direction: column; /*Stacks the title and the "+" button vertically*/
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+/*Here we change the style of the .sell-title heading inside .sell-box.*/
+.sell-title {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  color: #4a2c17;
+  text-align: center;
+}
+
+/*Here we change the style of the .sell-plus button (the big "+" button inside .sell-box that links to Sell.php).*/
+.sell-plus {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7e8d3;
+  color: #c4532d;
+  font-family: Arial, sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1;
+  text-decoration: none;
+  border: 2px solid #c4532d;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+/*Here we change the style of .sell-plus when the mouse is over it (:hover).*/
+.sell-plus:hover {
+  background-color: #c4532d; /*Inverts background to orange-rust*/
+  color: #f7e8d3; /*Inverts "+" symbol to cream*/
+  transform: scale(1.1); /*Grows 10% bigger on hover*/
+}
+
+/*Here we change the style of the .donate-card banner ("Do you want to donate your books?" on Main.php that links to Donate.php).*/
+.donate-card {
+  display: block;
+  width: 640px;
+  max-width: 90%;
+  margin: 0 auto 40px auto; /*Centers the card horizontally*/
+  padding: 30px;
+  background-color: var(--autumn-rust); /*Orange-rust background*/
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  text-decoration: none;
+  color: var(--autumn-cream);
+}
+
+/*Here we change the style of the <h2> title inside .donate-card.*/
+.donate-card h2 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+    color: var(--autumn-cream);
+}
+
+/*Here we change the style of the <p> subtitle inside .donate-card.*/
+.donate-card p {
+    margin: 0;
+    font-size: 16px;
+    color: var(--autumn-cream);
+}
+
+/*Here we change the style of .donate-card when the mouse is over it (:hover).*/
+.donate-card:hover {
+    background-color: #a83f20; /*Darker rust background on hover*/
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* ------------------------------------------------------------------------------ */
+/* 9. SWAP CARD BANNER (MAIN.PHP) */
+/* ------------------------------------------------------------------------------ */
+
+/*Here we change the style of the .swap-card banner ("Want to swap books?" on Main.php that links to Swap.php).*/
+.swap-card {
+  display: flex; /*Puts the circular swap icon and the text side by side*/
+  align-items: center;
+  gap: 24px;
+  width: 640px;
+  max-width: 90%;
+  margin: 0 auto 40px auto; /*Centers the card horizontally*/
+  padding: 28px 36px;
+  background-color: var(--autumn-umber); /*Dark brown background*/
+  border-radius: 60px 12px 60px 12px; /*Asymmetric rounded corners for a unique leaf-like shape*/
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  color: var(--autumn-cream);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/*Here we change the style of .swap-card when the mouse is over it (:hover).*/
+.swap-card:hover {
+  background-color: var(--autumn-umber-dark); /*Darker brown on hover*/
+  transform: translateY(-3px); /*Lifts the card 3px up when hovering*/
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.35);
+}
+
+/*Here we change the style of the .swap-icon circle (holds the arrows symbol &#8644; inside .swap-card).*/
+.swap-icon {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /*Makes the icon box a circle*/
+  background-color: var(--autumn-gold); /*Golden yellow circle*/
+  color: var(--autumn-umber); /*Dark brown arrows symbol*/
+  font-size: 34px;
+  font-weight: bold;
+  transition: transform 0.5s ease; /*Smooth rotation animation in 0.5 seconds*/
+}
+
+/*Here we rotate the .swap-icon circle by 180 degrees when the user hovers over .swap-card.*/
+.swap-card:hover .swap-icon {
+  transform: rotate(180deg);
+}
+
+/*Here we change the style of the .swap-title heading inside .swap-card.*/
+.swap-title {
+  margin: 0 0 6px 0;
+  font-size: 24px;
+  color: var(--autumn-gold); /*Golden yellow title*/
+  text-align: left;
+}
+
+/*Here we change the style of the .swap-sub description inside .swap-card.*/
+.swap-sub {
+  margin: 0;
+  font-size: 16px;
+  color: var(--autumn-cream); /*Cream text*/
+  text-align: left;
+}
+
+/*Here we change the .swap-card layout on small mobile phone screens (480px or smaller) so the icon sits on top and the text is centered below it.*/
+@media (max-width: 480px) {
+  .swap-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
+  }
+
+  .swap-title,
+  .swap-sub {
+    text-align: center;
+  }
+}

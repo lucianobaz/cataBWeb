@@ -1,0 +1,209 @@
+/* ============================================================================== */
+/* STYLE - CSS (Style.css) */
+/* Here we have the CSS file that changes the colors, sizes, and positions of all elements on our Login and Register page. */
+/* This file is linked inside the <head> of RegisterU.php. */
+/* ============================================================================== */
+
+/* -------------------------------------------------------------- */
+/* KEYWORDS EXPLANATION: */
+/* -------------------------------------------------------------- */
+
+/*What is a selector for? It is the name we write before the { } brackets to tell CSS which HTML element we want to change.*/
+
+/*If it starts with a dot (like .form-box), it selects an HTML class (class="form-box").*/
+/*If it starts with a hashtag (like #lang-btn), it selects an HTML id (id="lang-btn").*/
+/*If it has no symbol (like body or button), it selects that HTML tag directly (<body> or <button>).*/
+
+
+/* ------------------------------------------------------------------------------ */
+/* 1. GLOBAL VARIABLES & TYPOGRAPHY */
+/* ------------------------------------------------------------------------------ */
+
+/*Here we use @import to download the "Poppins" font from Google Fonts so we can use it on the Login and Register forms.*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+/* What is :root for? :root is where we create color variables (starting with --) for the whole stylesheet. */
+/* Instead of writing color codes like #4a2f18 many times, we save our autumn color palette here with a name and use var() later. */
+:root {
+  --autumn-umber: #4a2f18;      /*Here we save the main dark brown color of Crossed Pages*/
+  --autumn-umber-dark: #2e1c0e; /*Here we save a deeper dark brown color*/
+  --autumn-rust: #c1502e;       /*Here we save the warm orange-rust color used for buttons and links*/
+  --autumn-rust-dark: #a13f22;  /*Here we save a darker rust color for when the mouse passes over a button*/
+  --autumn-gold: #d9a441;       /*Here we save the golden yellow accent color*/
+  --autumn-cream: #f6ead2;      /*Here we save the soft cream color for light text and borders*/
+  --autumn-ink: #2b1a0e;        /*Here we save the very dark brown color for main text so it is easy to read*/
+  --autumn-bg: #dab989;         /*Here we save the warm tan background color*/
+}
+
+/* ------------------------------------------------------------------------------ */
+/* 2. BASE RESET & PAGE BACKGROUND */
+/* ------------------------------------------------------------------------------ */
+
+/*Here we change the style of all elements on the page using the * symbol (which means "everything").*/
+/*What is box-sizing: border-box for? It makes sure that when we add padding or borders to a box, the box does not grow bigger than its width and break the page.*/
+* {
+    margin: 0; /*Removes default outer space*/
+    padding: 0; /*Removes default inner space*/
+    box-sizing: border-box;
+    font-family: "Poppins", serif; /*Sets the Poppins font we imported above for all elements*/
+}
+
+/*Here we change the style of the <body> tag (the main screen of RegisterU.php).*/
+/*What is display: flex for? Flexbox is a tool that helps us align and center elements inside a container.*/
+body {
+    display: flex; /*Activates Flexbox so we can center the login/register card on the screen*/
+    justify-content: center; /*Centers the form card horizontally in the middle of the screen*/
+    align-items: center; /*Centers the form card vertically in the middle of the screen*/
+    min-height: 100vh; /*Makes the body take at least 100% of the screen height (vh means viewport height)*/
+    background: linear-gradient(to right, #e8c99a, #8a5a35); /*What is linear-gradient() for? It creates a smooth background color transition from light tan on the left to warm brown on the right*/
+    color: var(--autumn-ink); /*Uses var() to apply our dark brown text color variable (--autumn-ink)*/
+}
+
+/* ------------------------------------------------------------------------------ */
+/* 3. LOGIN & REGISTER FORM CARDS */
+/* ------------------------------------------------------------------------------ */
+
+/*Here we change the style of the .form-box container (the cream card that holds the Login form and the Register form on RegisterU.php).*/
+/*This connects with ErrorRegister.php and JavaScript.js: both forms start hidden (display: none), and only the one with the .active class is shown.*/
+.form-box {
+    width: 100%; /*Takes full available width up to max-width*/
+    max-width: 450px; /*Stops the form card from stretching wider than 450px*/
+    padding: 30px; /*Adds 30px of inner space around the form inputs*/
+    background-color: #fdf8ee; /*Soft cream background for the card*/
+    border-radius: 10px; /*Rounds the 4 corners of the card by 10px*/
+    box-shadow: 0 4px 16px rgba(43, 26, 14, 0.18); /*Adds a soft brown shadow under the card (rgba adds color with 18% transparency)*/
+    display: none; /*Hides the form box by default until .active is added*/
+}
+
+/*Here we change the style of .form-box when it also has the .active class (added by isActiveForm() in ErrorRegister.php or showForm() in JavaScript.js).*/
+.form-box.active {
+    display: block; /*Makes the active form visible on the screen*/
+}
+
+/*Here we change the style of the <h2> title ("Login" and "Register") inside the form card.*/
+h2 {
+    font-size: 34px; /*Large title size*/
+    text-align: center; /*Centers the title text*/
+    margin-bottom: 20px; /*Leaves 20px of space below the title*/
+    color: var(--autumn-ink); /*Dark brown text color*/
+}
+
+/*Here we change the style of all <input> and <select> fields where the user types their name, email, and password.*/
+input,
+select {
+    width: 100%; /*Makes the text box take 100% of the form width*/
+    padding: 12px; /*Adds 12px of comfortable inner space where the user types*/
+    background: #eee; /*Light gray background inside the input box*/
+    border-radius: 6px; /*Rounds the corners of the input box*/
+    border: none; /*Removes the default border*/
+    outline: none; /*Removes the default outline when clicking inside*/
+    font-size: 16px; /*Readable text size*/
+    color: var(--autumn-ink); /*Dark brown text when typing*/
+    margin-bottom: 20px; /*Leaves 20px of vertical space below each input box*/
+}
+
+/*Here we change the style of the <button> element (the "Login" and "Register" submit buttons).*/
+button {
+    width: 100%; /*Makes the button span the full width of the form*/
+    padding: 12px; /*Adds 12px of inner space inside the button*/
+    background: var(--autumn-rust); /*Paints the button with our warm orange-rust color*/
+    border-radius: 6px; /*Rounds the corners of the button*/
+    border: none; /*Removes default border*/
+    cursor: pointer; /*Changes the mouse arrow into a clicking hand*/
+    font-size: 16px;
+    color: #fff; /*White text color*/
+    font-weight: 500; /*Medium thickness letters*/
+    margin-bottom: 20px; /*Leaves 20px of space below the button*/
+    transition: 0.3s; /*Makes the color change smoothly in 0.3 seconds when hovering*/
+}
+
+/*Here we change the style of <button> when the user puts the mouse over it (:hover means mouse over).*/
+button:hover {
+    background: var(--autumn-rust-dark); /*Changes the button background to a darker rust color*/
+}
+
+/*Here we change the style of the <p> paragraph at the bottom of the form ("Do not have an account?" / "Already have an account?").*/
+p {
+    font-size: 14.5px;
+    text-align: center; /*Centers the text*/
+    margin-bottom: 10px;
+}
+
+/*Here we change the style of the <a> clickable links inside the <p> paragraph ("Register" / "Login").*/
+p a {
+    color: var(--autumn-rust); /*Paints the link in warm orange-rust*/
+    text-decoration: none; /*Removes the default underline*/
+}
+
+/*Here we change the style of p a when the mouse is over the link (:hover).*/
+p a:hover {
+    text-decoration: underline; /*Adds an underline when hovering over the link*/
+}
+
+/*Here we change the style of <span> text elements inside the form.*/
+span {
+    color: var(--autumn-rust-dark); /*Paints span text in dark rust color*/
+}
+
+/* ------------------------------------------------------------------------------ */
+/* 4. FEEDBACK MESSAGES (ERROR & SUCCESS) */
+/* ------------------------------------------------------------------------------ */
+
+/*Here we change the shared style of the .error-message and .success-message boxes (created by showError() and showSuccess() in ErrorRegister.php).*/
+.error-message,
+.success-message {
+    padding: 12px; /*Inner space around the message text*/
+    border-radius: 6px; /*Rounded corners*/
+    font-size: 16px;
+    text-align: center; /*Centers the message*/
+    margin-bottom: 20px; /*Space below the message box*/
+}
+
+/*Here we change the colors specifically for .error-message when login or registration fails.*/
+.error-message {
+    background: #f3ded2; /*Soft reddish-tan background*/
+    color: var(--autumn-rust-dark); /*Dark rust red text color*/
+}
+
+/*Here we change the colors specifically for .success-message when registration succeeds.*/
+.success-message {
+    background: #cef5cd; /*Soft light green background*/
+    color: green; /*Green text color*/
+}
+
+/* ------------------------------------------------------------------------------ */
+/* 5. FLOATING LANGUAGE BUTTON */
+/* ------------------------------------------------------------------------------ */
+
+/*Here we change the style of the #lang-btn button (the floating Español / English button that runs toggleLanguage() from translations.js).*/
+/*What is position: fixed for? It glues the button to the bottom-right corner of the screen so it stays in the same spot even if you scroll.*/
+#lang-btn {
+  position: fixed; /*Keeps the button fixed on the screen*/
+  bottom: 25px; /*Places it 25px from the bottom edge*/
+  right: 25px; /*Places it 25px from the right edge*/
+  z-index: 9999; /*Makes sure the button stays on top of all other elements*/
+
+  width: 65px; /*Sets width to 65px*/
+  height: 65px; /*Sets height to 65px (equal to width so it forms a circle)*/
+  border-radius: 50%; /*Rounds the corners by 50% to make a perfect circle*/
+  border: 2px solid var(--autumn-cream); /*Cream border around the circle*/
+  background-color: var(--autumn-rust); /*Rust orange background*/
+  color: var(--autumn-cream); /*Cream text color*/
+  font-size: 14px;
+  font-weight: bold; /*Bold letters*/
+  cursor: pointer; /*Hand cursor on hover*/
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /*Shadow underneath the floating button*/
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /*Smooth animation when hovering*/
+
+  display: flex; /*Uses Flexbox to center the word inside the circle*/
+  align-items: center; /*Centers vertically*/
+  justify-content: center; /*Centers horizontally*/
+}
+
+/*Here we change the style of #lang-btn when the mouse is over it (:hover).*/
+#lang-btn:hover {
+  background-color: var(--autumn-umber); /*Changes background to dark brown*/
+  transform: scale(1.08); /*Makes the button grow 8% bigger when hovering*/
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4); /*Makes the shadow deeper*/
+}

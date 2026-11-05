@@ -1,0 +1,108 @@
+{
+  "en": {
+    "buttonText": "Español",
+    "buy-btn": "Buy",
+
+    "navbar": "<div class='menu'><a href='./Main.php'>Home</a><a href='./Buy.php'>Buy</a><a href='./Sell.php'>Sell</a><a href='./Swap.php'>Swap</a><a href='./Donate.php'>Donate</a></div>",
+    "nav": "<div class='menu'><a id='color' href='./Main.php'>Main</a><a href='./RegisterU.php' id='access-link'>Access</a></div>",
+    "main-title": "<h1>Crossed Pages</h1>",
+    "how-works": "<p>This website serves as a community for book lovers to easily buy, swap, donate, or sell second-hand books in one secure place. By giving pre-loved stories a new home, it offers an affordable way to enjoy reading while helping the environment through sustainable re-use.</p>",
+    "plans": "<h1 class='main-title'>Plans</h1><div class='container'><a href='Donate.php' class='grid-item item-donate'><h3 class='item-text'>Donate</h3><p class='item-text item-description'>Make a difference by sharing culture. Give away your used books so they can reach schools, libraries, or communities in need.</p></a><a href='Sell.php' class='grid-item item-sell'><h3 class='item-text'>Sell</h3><p class='item-text item-description'>Have you finished a book you no longer want? Find someone who wants it and sell it for a reasonable price.</p></a><a href='Buy.php' class='grid-item item-buy'><h3 class='item-text'>Buy</h3><p class='item-text item-description'>Discover thousands of titles at great prices. Pick your favorite book and pay securely.</p></a><a href='Swap.php' class='grid-item item-trade'><h3 class='item-text'>Trade</h3><p class='item-text item-description'>Already finished your books? Connect with other readers, offer the titles you no longer need, and trade them for new stories without spending money.</p></a></div>",
+    "about-us-title": "<h1>About us</h1>",
+    "about-us-text": "<p>We are two students from ITSP and passionate readers who decided to launch this project after noticing that there aren't many options for what to do with books that have already been read.</p>",
+    "footer-credit": "<p class=\"credit\">Website created and designed by Catalina Ligüera and Tomás Correa.</p>",
+    "footer-copyright": "<p class=\"credit\"> ©2026 - Crossed Pages, Paysandú, Uruguay.</p>",
+
+    "page": {
+      "title": "Register User"
+    },
+
+    "login.title": "Login",
+    "login.email": "Email",
+    "login.password": "Password",
+    "login.submit": "Login",
+    "login.noAccount": "Do not have an account?",
+    "login.registerLink": "Register",
+
+    "register.title": "Register",
+    "register.name": "Name",
+    "register.email": "Email",
+    "register.password": "Password",
+    "register.submit": "Register",
+    "register.hasAccount": "Already have an account?",
+    "register.loginLink": "Login",
+
+    "swap-info": "<h1 class='main-title'>Swap</h1><p>Swap books with other readers in your community! Find your next read by trading what you already have.</p><p>We are developing new ways to make swapping even easier for you!</p>",
+    "donate-info": "<h1 class='main-title'>Donate</h1><p>We are grateful for your support! Your donations help us maintain and improve our platform, allowing us to continue providing a space for book lovers to connect and share their passion for reading. Every contribution, big or small, makes a difference in our mission to promote literacy and the love of books.</p><p>We are developing new ways to make donating even easier for you!</p>",
+    "sell-info": "<h1 class='main-title'>Sell</h1><p>Sell your used books and help others find their next read!</p><p>We are developing new ways to make selling even easier for you</p>",
+    "sell-section": "<div class='sell-box'><h2 class='sell-title'>Sell your books here</h2><a href='Sell.php' class='sell-plus' aria-label='Agregar libro'>+</a></div>",
+    "donate-section": "<a href='donate.php' class='donate-card'><h2>Do you want to donate your books?</h2><p>Give them a second life</p></a>",
+
+    "footer": "<div class='footer'><p class='credit'>Website created and designed by Catalina Ligüera and Tomás Correa.</p><div class='footer-emails'><p>catalinaliguera@gmail.com</p><p>tomascorreadurante@gmail.com</p></div><p class='credit'> ©2026 - Crossed Pages, Paysandú, Uruguay.</p></div>",
+    
+    "navbar-main": "<div class='menu'><a href='./Main.php' class='active-link'>Home</a><a href='./Buy.php'>Buy</a><a href='./Sell.php'>Sell</a><a href='./Swap.php'>Swap</a><a href='./Donate.php'>Donate</a></div>",
+    "navbar-access": "<a href='./RegisterU.php' id='access-link'>Access</a></div>",
+
+    "navbar-buy": "<div class='menu'><a href='./Main.php'>Home</a><a href='./Buy.php' class='active-link'>Buy</a><a href='./Sell.php'>Sell</a><a href='./Swap.php'>Swap</a><a href='./Donate.php'>Donate</a></div>",
+    "navbar-sell": "<div class='menu'><a href='./Main.php'>Home</a><a href='./Buy.php'>Buy</a><a href='./Sell.php' class='active-link'>Sell</a><a href='./Swap.php'>Swap</a><a href='./Donate.php'>Donate</a></div>",
+    "navbar-swap": "<div class='menu'><a href='./Main.php'>Home</a><a href='./Buy.php'>Buy</a><a href='./Sell.php'>Sell</a><a href='./Swap.php' class='active-link'>Swap</a><a href='./Donate.php'>Donate</a></div>",
+    "navbar-donate": "<div class='menu'><a href='./Main.php'>Home</a><a href='./Buy.php'>Buy</a><a href='./Sell.php'>Sell</a><a href='./Swap.php'>Swap</a><a href='./Donate.php' class='active-link'>Donate</a></div>",
+    "swap-section": "<a href='Swap.php' class='swap-card'><span class='swap-icon'>&#8644;</span><div class='swap-text'><h2 class='swap-title'>Want to swap books?</h2><p class='swap-sub'>Trade the books you already read for new stories, no money needed</p></div></a>",
+
+    "welcome": "Welcome",
+    "logout": "Logout"
+  },
+  "es": {
+    "buttonText": "English",
+    "buy-btn": "Comprar",
+
+    "navbar": "<div class='menu'><a href='./Main.php'>Principal</a><a href='./Buy.php'>Compra</a><a href='./Sell.php'>Venta</a><a href='./Swap.php'>Intercambio</a><a href='./Donate.php'>Donaciones</a></div>",
+    "nav": "<div class='menu'><a id='color' href='./Main.php'>Principal</a><a href='./RegisterU.php' id='access-link'>Acceso</a></div>",
+    "main-title": "<h1>Páginas cruzadas</h1>",
+    "how-works": "<p>Este sitio web sirve como una comunidad para los amantes de los libros para comprar, intercambiar, donar o vender libros de segunda mano en un solo lugar seguro. Al darle un nuevo hogar a nuevas historias, ofreces una forma accesible de disfrutar de la lectura mientras ayudas al medio ambiente a través de la reutilización sostenible.</p>",
+    "plans": "<h1 class='main-title'>Planes</h1><div class='container'><a href='Donate.php' class='grid-item item-donate'><h3 class='item-text'>Donar</h3><p class='item-text item-description'>Haz la diferencia compartiendo cultura. Regala tus libros usados para que lleguen a escuelas, bibliotecas o comunidades necesitadas.</p></a><a href='Sell.php' class='grid-item item-sell'><h3 class='item-text'>Vender</h3><p class='item-text item-description'>¿Terminaste un libro que ya no quieres? Encuentra a alguien que lo quiera y véndelo a un precio razonable.</p></a><a href='Buy.php' class='grid-item item-buy'><h3 class='item-text'>Comprar</h3><p class='item-text item-description'>Descubre miles de títulos a excelentes precios. Elige tu libro favorito y paga de forma segura.</p></a><a href='Swap.php' class='grid-item item-trade'><h3 class='item-text'>Intercambiar</h3><p class='item-text item-description'>¿Ya terminaste tus libros? Conéctate con otros lectores, ofrece los títulos que ya no necesitas e intercámbialos por nuevas historias sin gastar dinero.</p></a></div>",
+    "about-us-title": "<h1>Acerca de nosotros</h1>",
+    "about-us-text": "<p>Somos dos estudiantes del ITSP apasionados por la lectura y decidimos lanzar este proyecto después de notar que no hay muchas opciones sobre que hacer con libros que ya han sido leídos.</p>",
+    "footer-credit": "<p class=\"credit\">Sitio web creado y diseñado por Catalina Ligüera y Tomás Correa.</p>",
+    "footer-copyright": "<p class=\"credit\"> ©2026 - Páginas cruzadas, Paysandú, Uruguay.</p>",
+
+    "page": {
+      "title": "Registro de usuario"
+    },
+
+    "login.title": "Inicio de sesión",
+    "login.email": "Correo electrónico",
+    "login.password": "Contraseña",
+    "login.submit": "Acceder",
+    "login.noAccount": "¿No tienes una cuenta?",
+    "login.registerLink": "Registrarse",
+
+    "register.title": "Registro de usuario",
+    "register.name": "Nombre",
+    "register.email": "Correo electrónico",
+    "register.password": "Contraseña",
+    "register.submit": "Registrarse",
+    "register.hasAccount": "¿Ya tienes una cuenta?",
+    "register.loginLink": "Acceder",
+
+    "swap-info": "<h1 class='main-title'>Intercambio</h1><p>¡Intercambia libros con otros lectores de tu comunidad! Encuentra tu próxima lectura intercambiando los que ya tienes.</p><p>Estamos desarrollando nuevas formas de hacer que el intercambio sea aún más fácil para ti</p>",
+    "donate-info": "<h1 class='main-title'>Donaciones</h1><p>¡Estamos agradecidos por tu apoyo! Tus donaciones nos ayudan a mantener y mejorar nuestra plataforma, permitiéndonos continuar brindando un espacio para que los amantes de los libros se conecten y compartan su pasión por la lectura. Cada contribución, grande o pequeña, marca la diferencia en nuestra misión de promover la alfabetización y el amor por los libros.</p><p>Estamos desarrollando nuevas formas de hacer que las donaciones sean aún más fáciles para ti</p>",
+    "sell-info": "<h1 class='main-title'>Venta</h1><p>¡Vende tus libros usados y ayuda a otros a encontrar su próxima lectura!</p><p>Estamos desarrollando nuevas formas de hacer que la venta sea aún más fácil para ti</p>",
+    "sell-section": "<div class='sell-box'><h2 class='sell-title'>Vende tus libros aquí</h2><a href='Sell.php' class='sell-plus' aria-label='Agregar libro'>+</a></div>",
+    "donate-section": "<a href='donate.php' class='donate-card'><h2>¿Quieres donar tus libros?</h2><p>Dales una segunda vida</p></a>",
+
+    "footer": "<div class='footer'><p class='credit'>Sitio web creado y diseñado por Catalina Ligüera y Tomás Correa.</p><div class='footer-emails'><p>catalinaliguera@gmail.com</p><p>tomascorreadurante@gmail.com</p></div><p class='credit'> ©2026 - paginas cruzadas, Paysandú, Uruguay.</p></div>",
+    
+    "navbar-main": "<div class='menu'><a href='./Main.php' class='active-link'>Principal</a><a href='./Buy.php'>Compra</a><a href='./Sell.php'>Venta</a><a href='./Swap.php'>Intercambio</a><a href='./Donate.php'>Donaciones</a></div>",
+    "navbar-access": "<a href='./RegisterU.php' id='access-link'>Acceso</a></div>",
+    
+    "navbar-buy": "<div class='menu'><a href='./Main.php'>Principal</a><a href='./Buy.php' class='active-link'>Compra</a><a href='./Sell.php'>Venta</a><a href='./Swap.php'>Intercambio</a><a href='./Donate.php'>Donaciones</a></div>",
+    "navbar-sell": "<div class='menu'><a href='./Main.php'>Principal</a><a href='./Buy.php'>Compra</a><a href='./Sell.php' class='active-link'>Venta</a><a href='./Swap.php'>Intercambio</a><a href='./Donate.php'>Donaciones</a></div>",
+    "navbar-swap": "<div class='menu'><a href='./Main.php'>Principal</a><a href='./Buy.php'>Compra</a><a href='./Sell.php'>Venta</a><a href='./Swap.php' class='active-link'>Intercambio</a><a href='./Donate.php'>Donaciones</a></div>",
+    "navbar-donate": "<div class='menu'><a href='./Main.php'>Principal</a><a href='./Buy.php'>Compra</a><a href='./Sell.php'>Venta</a><a href='./Swap.php'>Intercambio</a><a href='./Donate.php' class='active-link'>Donaciones</a></div>",
+    "swap-section": "<a href='Swap.php' class='swap-card'><span class='swap-icon'>&#8644;</span><div class='swap-text'><h2 class='swap-title'>¿Quieres intercambiar libros?</h2><p class='swap-sub'>Cambia los libros que ya leíste por nuevas historias, sin gastar dinero</p></div></a>",
+
+    "welcome": "Bienvenido",
+    "logout": "Salir"
+  }
+}
